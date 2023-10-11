@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">pocket investor</string>
+    <string name="form_name">Name</string>
+    <string name="form_username">username</string>
+    <string name="form_firstname">firstname</string>
+    <string name="lastname">lastname</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="confirm_password">confirm password</string>
+    <string name="sign_up">sign up</string>
+    <string name="pocket_investor">Pocket Investor</string>
+    <string name="log_in">log in</string>
+    <string name="back">back</string>
+</resources>
