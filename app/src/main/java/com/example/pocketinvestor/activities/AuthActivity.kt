@@ -49,7 +49,6 @@ class AuthActivity : AppCompatActivity() {
                         response: Response<JwtRequest>
                     ) {
                         Toast.makeText(this@AuthActivity, "successful", Toast.LENGTH_LONG).show()
-
                     }
                 })
         }
