@@ -5,27 +5,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="50dp"
-    tools:context=".activities.MainActivity">
+    android:background="#067699">
+
 
     <LinearLayout
-        android:layout_width="332dp"
-        android:layout_height="600dp"
+        android:layout_width="362dp"
+        android:layout_height="682dp"
+        android:layout_alignParentEnd="true"
+
         android:orientation="vertical"
         tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:text="@string/app_name" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/username_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/turquoise"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rectangle"
             android:hint="@string/form_username"
-            android:padding="15dp" />
+            android:padding="15dp"
+            android:shadowRadius="30"
+            android:shape="rectangle" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/firstname_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/purple"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rectangle"
             android:hint="@string/form_firstname"
             android:padding="15dp" />
 
@@ -33,7 +48,8 @@
             android:id="@+id/lastname_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/violet"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rectangle"
             android:hint="@string/lastname"
             android:padding="15dp" />
 
@@ -41,7 +57,8 @@
             android:id="@+id/email_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/red"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rectangle"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:padding="15dp" />
@@ -50,7 +67,8 @@
             android:id="@+id/password_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/gold"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rectangle"
             android:hint="@string/password"
             android:inputType="textPassword"
             android:padding="15dp" />
@@ -59,32 +77,28 @@
             android:id="@+id/confirm_password_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/gold"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rectangle"
             android:hint="@string/confirm_password"
             android:inputType="textPassword"
             android:padding="15dp" />
-
-        <pl.droidsonroids.gif.GifImageView
-            android:layout_width="match_parent"
-            android:layout_height="89dp"
-            android:background="#fff"
-            android:minHeight="1000dp"
-            android:src="@drawable/monet" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/sign_up_button"
             android:layout_width="match_parent"
             android:layout_height="84dp"
+            android:layout_marginTop="20dp"
             android:minHeight="100dp"
-            android:text="@string/sign_up"/>
+            android:text="@string/sign_up" />
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/back_button"
-            android:minHeight="100dp"
-            android:text="@string/back"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            />
+            android:layout_marginTop="20dp"
+            android:minHeight="100dp"
+            android:text="@string/back" />
 
     </LinearLayout>
 

@@ -11,4 +11,6 @@
     <string name="pocket_investor">Pocket Investor</string>
     <string name="log_in">log in</string>
     <string name="back">back</string>
+    <string name="go_to_portfolio">go to portfolio</string>
+    <string name="go_to_stocks">go to stocks</string>
 </resources>

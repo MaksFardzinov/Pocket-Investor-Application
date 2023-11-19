@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.pocketinvestor.R
 import com.example.pocketinvestor.pojo.JwtRequest
+import com.example.pocketinvestor.pojo.JwtResponse
 import com.example.pocketinvestor.retrofit.RetrofitService
 import com.example.pocketinvestor.retrofit.UserApi
 import com.google.android.material.button.MaterialButton
@@ -20,6 +21,7 @@ class AuthActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auth)
         auth()
+
     }
     private fun auth(){
         val inputEditUsername: TextInputEditText =findViewById(R.id.username_form)
@@ -37,20 +39,26 @@ class AuthActivity : AppCompatActivity() {
             val retrofitService = RetrofitService()
             val userApi: UserApi = retrofitService.getRetrofit().create(UserApi::class.java)
             userApi.auth(jwtRequest)
-                .enqueue(object : Callback<JwtRequest> {
+                .enqueue(object : Callback<JwtResponse> {
 
-                    override fun onFailure(call: Call<JwtRequest>, t: Throwable) {
+                    override fun onFailure(call: Call<JwtResponse>, t: Throwable) {
                         Toast.makeText(this@AuthActivity, "fail", Toast.LENGTH_LONG).show()
                         Logger.getLogger("error", t.toString())
                     }
 
                     override fun onResponse(
-                        call: Call<JwtRequest>,
-                        response: Response<JwtRequest>
+                        call: Call<JwtResponse>,
+                        response: Response<JwtResponse>
                     ) {
                         Toast.makeText(this@AuthActivity, "successful", Toast.LENGTH_LONG).show()
+                        val intent = Intent(this@AuthActivity,ProfileActivity::class.java)
+                        println(response.body()?.token)
+                        intent.putExtra("token",response.body()?.token)
+                        startActivity(intent)
                     }
                 })
+
         }
     }
 }
+
