@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.pocketinvestor.R
-import com.example.pocketinvestor.pojo.RegistrationUser
+import com.example.pocketinvestor.pojo.user.RegistrationUser
 import com.example.pocketinvestor.retrofit.RetrofitService
 import com.example.pocketinvestor.retrofit.UserApi
 import com.google.android.material.button.MaterialButton
@@ -63,7 +63,17 @@ class RegActivity : AppCompatActivity() {
                         call: Call<RegistrationUser>,
                         response: Response<RegistrationUser>
                     ) {
-                        Toast.makeText(this@RegActivity,"successful", Toast.LENGTH_LONG).show()
+                        if(response.isSuccessful) {
+                            val intent = Intent(this@RegActivity,AuthActivity::class.java)
+                            startActivity(intent)
+
+                            Toast.makeText(this@RegActivity,"successful", Toast.LENGTH_LONG).show()
+                        }
+                        else {
+                            Toast.makeText(this@RegActivity, "incorrect data", Toast.LENGTH_LONG).show()
+                            Logger.getLogger("incorrect data")
+                        }
+
 
                     }
                 })

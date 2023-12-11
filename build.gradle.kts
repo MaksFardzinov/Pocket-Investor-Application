@@ -10,6 +10,9 @@ buildscript{
 }
 allprojects {
     repositories {
+        // add below line in repositories section
+
+        google()
         mavenCentral()
+        }
     }
-}

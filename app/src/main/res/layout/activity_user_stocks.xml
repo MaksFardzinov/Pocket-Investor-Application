@@ -34,14 +34,11 @@
         android:layout_marginTop="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
-    <androidx.recyclerview.widget.RecyclerView
+<androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:itemCount="6"
-        tools:listitem="@layout/stocks_design"
-        />
-
+        tools:listitem="@layout/user_stocks_design" />
 
 </LinearLayout>

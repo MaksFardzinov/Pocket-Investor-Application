@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.pocketinvestor.R
-import com.example.pocketinvestor.pojo.JwtRequest
-import com.example.pocketinvestor.pojo.JwtResponse
+import com.example.pocketinvestor.pojo.jwt.JwtRequest
+import com.example.pocketinvestor.pojo.jwt.JwtResponse
 import com.example.pocketinvestor.retrofit.RetrofitService
 import com.example.pocketinvestor.retrofit.UserApi
 import com.google.android.material.button.MaterialButton
@@ -50,11 +50,17 @@ class AuthActivity : AppCompatActivity() {
                         call: Call<JwtResponse>,
                         response: Response<JwtResponse>
                     ) {
-                        Toast.makeText(this@AuthActivity, "successful", Toast.LENGTH_LONG).show()
-                        val intent = Intent(this@AuthActivity,ProfileActivity::class.java)
-                        println(response.body()?.token)
-                        intent.putExtra("token",response.body()?.token)
-                        startActivity(intent)
+                        if(response.isSuccessful) {
+                            Toast.makeText(this@AuthActivity, "successful", Toast.LENGTH_LONG)
+                                .show()
+                            val intent = Intent(this@AuthActivity, ProfileActivity::class.java)
+                            intent.putExtra("token", response.body()?.token)
+                            startActivity(intent)
+                        }
+                        else {
+                            Toast.makeText(this@AuthActivity, "incorrect data", Toast.LENGTH_LONG).show()
+                            Logger.getLogger("incorrect data")
+                        }
                     }
                 })
 

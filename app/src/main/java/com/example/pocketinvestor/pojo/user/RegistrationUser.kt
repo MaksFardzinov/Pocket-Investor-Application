@@ -1,4 +1,4 @@
-package com.example.pocketinvestor.pojo
+package com.example.pocketinvestor.pojo.user
 
 import com.google.gson.annotations.SerializedName
 

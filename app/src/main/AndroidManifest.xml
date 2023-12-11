@@ -26,6 +26,16 @@
             android:name=".activities.ProfileActivity"
             android:exported="false" />
         <activity
+            android:name=".activities.PortfolioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.StocksActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ReplenishBalanceActivity"
+            android:exported="false" />
+        <activity
+
             android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>

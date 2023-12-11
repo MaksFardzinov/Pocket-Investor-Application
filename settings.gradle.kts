@@ -14,5 +14,6 @@ dependencyResolutionManagement {
 }
 
 
+
 rootProject.name = "pocket investor"
 include(":app")

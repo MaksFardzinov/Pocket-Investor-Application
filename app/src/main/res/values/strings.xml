@@ -13,4 +13,10 @@
     <string name="back">back</string>
     <string name="go_to_portfolio">go to portfolio</string>
     <string name="go_to_stocks">go to stocks</string>
+    <string name="sell">sell</string>
+    <string name="replenish_balance">replenish balance</string>
+    <string name="buy">buy</string>
+    <string name="profile">profile</string>
+    <string name="count">count</string>
+    <string name="amount_of_money">amount of money</string>
 </resources>
